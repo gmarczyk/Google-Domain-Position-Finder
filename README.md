@@ -12,9 +12,7 @@ Application should find position of the record of query result. If pl.wikipedia.
 Also not all user-agents available to choose in application are working. Some of them are deprecated or not supported by google search engine.
 
 Repository files are IntelliJ IDEA 2017.1 project.
-Code is located in folders: 
-- src 
-- test
+Code is located in folder src
 
 Executable can be found in the path:
 - out\artifacts\GoogleQueryPositionSearcher_jar
