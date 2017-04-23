@@ -1,5 +1,4 @@
 # Google-Query-Position-Searcher
-<b>Check branch "Maven version", for the second version of the application</b>
 
 <b>Description: </b>Finds position of given domain in given google query using chosen or given user-agent.
 i.e:
