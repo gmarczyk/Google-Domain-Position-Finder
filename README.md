@@ -4,7 +4,7 @@
 i.e:
 - domain = "pl.wikipedia.org"
 - keywords = "wiki"
-- user-agent = "Chrome"
+- user-agent (set to default = "Chrome", other user-agents available only through code)
 
 Application should find position of the record of query result. If pl.wikipedia.org after searching "wiki" in Google search engine is on 4th position, such position will be displayed to the user.
 
