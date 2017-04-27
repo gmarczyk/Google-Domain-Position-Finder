@@ -8,4 +8,7 @@ i.e:
 
 Application should find position of the record of query result. If pl.wikipedia.org after searching "wiki" in Google search engine is on 4th position, such position will be displayed to the user.
 
+Two tools avaiable to use:
+ - Google Custom Search API
+ - URL request
 
