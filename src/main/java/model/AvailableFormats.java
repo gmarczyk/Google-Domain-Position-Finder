@@ -20,10 +20,8 @@ public enum AvailableFormats {
 
     /**
      * Matches String looking like &lt;h3 class="r" &gt;&lt;a href="/url?q= (HERE URL WITHOUT ,; characters) &amp;amp;
-     * @deprecated not used since 23.04.2017 MainController version 2.0.0
      */
     // NOTE: '&lt;' is html entity standing for '<', &gt; = '>', &amp; = '&', javadoc requires this formatting.
-    @Deprecated
     QUERY_RESULT_HREF_WITHOUT_ADS;
 
     public String getFormat(){

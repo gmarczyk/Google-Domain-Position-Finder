@@ -1,14 +1,12 @@
 package controller;
 
 import model.DataValidator;
-import model.PositionSearcherFacade;
-import model.query.GoogleQueryExecutor;
-import model.query.GoogleResultExtractor;
+import model.query.DefaultSearcherFactory;
+import model.query.PositionSearcherStrategy;
 import view.MainWindow;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.*;
 
@@ -17,15 +15,14 @@ import javax.swing.*;
  * Event handling happens here.
  *
  * @author  Marczyk Grzegorz
- * @version 2.0.0
+ * @version 2.1.0
  */
 public class MainController implements ActionListener  {
 
     private MainWindow view;
-    private PositionSearcherFacade positionSearcherFacade;
+    private PositionSearcherStrategy positionSearcherStrategy;
 
     public MainController() {
-        this.positionSearcherFacade = new PositionSearcherFacade();
         this.view = new MainWindow(this);
     }
 
@@ -44,10 +41,12 @@ public class MainController implements ActionListener  {
         String inputDomain = view.getInputDomain();
         String inputKeywords = view.getInputKeywords();
         if(isInputValid(inputDomain,inputKeywords)) {
-            Integer positionInQuery = positionSearcherFacade.searchForDomainPosition(inputDomain,inputKeywords);
+            positionSearcherStrategy = DefaultSearcherFactory.makeDefaultVersionOfStrategy(view.getChosenSearchingTool());
+            Integer positionInQuery = positionSearcherStrategy.searchForDomainPosition(inputDomain,inputKeywords);
+
             if(positionInQuery == -1)
                 JOptionPane.showMessageDialog(null,"Results contain no links, execution must have been blocked", "Error", JOptionPane.ERROR_MESSAGE);
-            if(positionInQuery != 0)
+            else if(positionInQuery != 0)
                 view.setQueryExecutionResult(positionInQuery.toString());
             else
                 view.setQueryExecutionResult("Such domain not found in query result");
@@ -62,5 +61,4 @@ public class MainController implements ActionListener  {
         boolean areKeywordsNotEmpty = DataValidator.isKeyWordCorrect(inputKeyword);
         return (isDomainFormatOk && areKeywordsNotEmpty);
     }
-
 }
