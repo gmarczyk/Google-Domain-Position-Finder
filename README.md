@@ -10,7 +10,7 @@ Also, simple URL request strategy was designed to ignore PPC (pay per click) res
 
 - domain = "pl.wikipedia.org"
 - keywords = "wiki"
-- user-agent (set to default = "Chrome", other user-agents available only through code)
+- user-agent (set to default = "Chrome"
 
 if chosen domain is "pl.wikipedia.org" and after searching "wiki" in Google, input domain is on 4th position, that position will be displayed to the user. One can check where any site (domain) would be positioned after searching in Google.
 
