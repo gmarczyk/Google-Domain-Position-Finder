@@ -1,14 +1,14 @@
-# Google-Query-Position-Searcher
+# Google-Domain-Position-Finder
 
-<b>Description: </b>Finds position of given domain in given google query using chosen or given user-agent.
+<b>Description: </b>Finds position of given domain in given google query using chosen or default user-agent.
 i.e:
 - domain = "pl.wikipedia.org"
 - keywords = "wiki"
 - user-agent (set to default = "Chrome", other user-agents available only through code)
 
-Application should find position of the record of query result. If pl.wikipedia.org after searching "wiki" in Google search engine is on 4th position, such position will be displayed to the user.
+Application should find position of given domain in search query result. For example, if chosen domain is "pl.wikipedia.org" and after searchiing "wiki" in Google this domain is on 4th position, that position will be displayed to the user.
 
-Two tools avaiable to use:
+Application uses two strategies to get query results from Google search engine:
  - Google Custom Search API
- - URL request
+ - simple URL request (parsing response body)
 
